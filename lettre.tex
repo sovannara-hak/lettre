@@ -1,0 +1,101 @@
+\NeedsTeXFormat{LaTeX2e}
+\documentclass[%
+%foldmarks,
+%bankhigh,
+%banklow,
+%draft,
+%refdate,
+%rightdate,
+%subjectdate,
+%twoside,
+%letterpaper]
+%a4offset,
+french,
+10pt,
+a4paper]
+{akletter}
+
+%\usepackage{babel}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+% If you want to use PostScript fonts it may be a good idea
+% to enable the following. This should get rid of any remaining
+% cm-fonts.
+\usepackage[TS1,T1]{fontenc}
+\usepackage{textcomp}
+
+% Options:
+% a4paper:     ISO A4 sized paper
+% a4offset:    ISO A4 sized paper with offset to the right, for 
+%              presentations folders
+% letterpaper: US letter size
+% bankhigh:    Bankconnections top right
+% banklow :    Bankconnections in footer
+% foldmarks:   Enable printing of foldmarks.
+
+% Specify the name of the .cfg-file
+% If not given akletter.cfg will be used
+
+\usename{akletter}
+%\usename{akfax}  % Use Sans-Serif for better readability
+%\usename{akfaxps}% Use PostScript fonts (Times/Courier)
+
+% Create an extra page with labels
+%
+%\makelabels
+
+%% This document will use the english page-layout throughout
+%% the file (only visible in the footer) even if it contains
+%% one English and two German letters.
+%% The rightfield will be ok for all three letters.
+%%
+%% There is no way to circumvent this, since the height of the
+%% footer is needed at the \begin{letter} to set the pagestyle.
+%% Well, there is: don't use language-dependent stuff inside a box.
+%%
+\selectlanguage{french}
+\begin{document}
+
+\begin{letter}{Bruce Campbell \\ GroovyBruce \\ 
+		123 Rue de la machine \\ Paris}
+%%
+%% This should really go into a cfg-file
+%% It's here to show you what is possible
+%% 
+\renewcommand*\pnumfont   {\bfseries}
+\renewcommand*\headfont   {\slshape} 
+\renewcommand*\reffont    {\normalfont}
+\renewcommand*\reftextfont{\normalfont}
+\pagestyle{headings} % to make these settings useful
+\telephone{06 81 13 47 04}
+\email{hak.sovannara@gmail.com}
+% \mailbox{ }
+\name{Sovannara HAK}
+ \signature{\vspace{-1cm} Sovannara HAK}
+\refdatename{Paris, France}
+%%
+%% If you want to use refdatename you have to set it first and
+%% define yref & co later! (Yes, this is ugly, still thinking
+%% about a better way)
+%%
+% \yref{ }
+% \ymail{1.6.1994}
+% \myref{ak/AK}
+% \mymail{1.6.1994}
+% \reftrue
+% \specialmail{ Einschreiben }
+\subject{Mon sujet}
+\opening{Madame, monsieur,}
+J'aime écrire des lettres en \LaTeX
+
+\closing{Cordialement,}
+
+\encl{CV}
+
+\end{letter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}

@@ -1,0 +1,3 @@
+Latex cover letter template
+---------------------------
+
